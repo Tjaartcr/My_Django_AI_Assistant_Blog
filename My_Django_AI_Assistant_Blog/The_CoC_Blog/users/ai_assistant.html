@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>AYEN AI Assistant</h1>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    <textarea name="query" class="form-control" placeholder="Ask about electrical installations or CoCs"></textarea>
+    <button type="submit" class="btn btn-primary mt-2">Ask AI</button>
+</form>
+{% if response %}
+<div class="mt-4">
+    <h2>AI Response:</h2>
+    <p>{{ response }}</p>
+</div>
+{% endif %}
+{% endblock %}
